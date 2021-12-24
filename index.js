@@ -46,7 +46,7 @@ const selectAlgorithm = async function(){
     var isInValidOption = true;
     while (isInValidOption){
         var answer = await new Promise(answer => {
-            rl.question('Which encryption algorithm you want to use?\n 1. aes-256-ctr (default)\n 2. aes-256-cbc\n 3. aes-256-cfb\n 4. aes-256-ofb\n 5. Cancel\n', (answer));
+            rl.question('Which encryption algorithm you want to use (press Enter for default)?\n 1. aes-256-ctr (default)\n 2. aes-256-cbc\n 3. aes-256-cfb\n 4. aes-256-ofb\n 5. Cancel\n', (answer));
         });
         switch (answer){
             case '1':
@@ -69,6 +69,10 @@ const selectAlgorithm = async function(){
                 isInValidOption = false;
                 cancel = true;
                 break;
+            case '':
+                currentAlgorithm = 'aes-256-ctr';
+                isInValidOption = false;
+                break;
             default:
                 console.log(answer + ' is not a valid option');
                 isInValidOption = true;
@@ -83,7 +87,7 @@ const DecryptMenu = async function(){
     var algorithmSelected = await selectAlgorithm();
     if(!algorithmSelected){
         var answer = await new Promise(answer => {
-            rl.question('Please write a password:\n', (answer));
+            rl.question('Please write the password:\n', (answer));
         });
         answer = crypto.createHash('sha256').update(String(answer)).digest();
         files = fs.readdirSync('./in');
