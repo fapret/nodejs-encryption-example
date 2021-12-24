@@ -1,0 +1,22 @@
+{
+  "name": "encryption-example",
+  "version": "1.0.0",
+  "description": "Example app to encrypt files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fapret/nodejs-encryption-example.git"
+  },
+  "keywords": [
+    "crypto"
+  ],
+  "author": "Santiago Nicolas Diaz Conde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fapret/nodejs-encryption-example/issues"
+  },
+  "homepage": "https://github.com/fapret/nodejs-encryption-example#readme"
+}
